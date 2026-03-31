@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Песни про теннис - Tennis Girl | Музыка о большом теннисе</title>
+    <meta name="description" content="Песни про теннис от Tennis Girl. Слушайте «Девчонка у сетки» и «Микст — это любовь» — первые песни на русском языке о большом теннисе, миксте и жизни на корте.">
+    <meta name="keywords" content="песни про теннис, песни про большой теннис, теннис песня, теннис музыка, Tennis Girl, микст теннис, девчонка у сетки, песня о теннисе, теннис на русском, музыка про спорт, песни о спорте">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tennis-song.ru/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Песни про большой теннис - Tennis Girl">
+    <meta property="og:description" content="Песни на русском языке о большом теннисе. Слушайте «Девчонка у сетки» и «Микст — это любовь».">
+    <meta property="og:type" content="music.album">
+    <meta property="og:image" content="song/image/devchonka.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a1628;
+            color: #e8e8e8;
+            line-height: 1.7;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a2a 50%, #0a1628 100%);
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(ellipse at center, rgba(200, 255, 0, 0.03) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: #c8ff00;
+            position: relative;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #8ba68e;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .hero .artist {
+            font-size: 1.1rem;
+            color: #c8ff00;
+            opacity: 0.8;
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Song sections */
+        .songs {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+        }
+
+        .song {
+            background: linear-gradient(145deg, #111d33, #162640);
+            border: 1px solid rgba(200, 255, 0, 0.1);
+            border-radius: 16px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .song:hover {
+            border-color: rgba(200, 255, 0, 0.25);
+        }
+
+        .song-header {
+            display: flex;
+            gap: 24px;
+            padding: 28px 28px 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .song-cover {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .song-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .song-info h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .song-info .artist-name {
+            color: #c8ff00;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .song-info p {
+            color: #9ab0c4;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Audio player */
+        .audio-wrap {
+            padding: 0 28px 8px;
+        }
+
+        audio {
+            width: 100%;
+            height: 44px;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: #1a2d4a;
+        }
+
+        /* Platform links */
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 28px 4px;
+        }
+
+        .platforms a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: rgba(200, 255, 0, 0.06);
+            border: 1px solid rgba(200, 255, 0, 0.15);
+            border-radius: 20px;
+            color: #c8ff00;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: background 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .platforms a:hover {
+            background: rgba(200, 255, 0, 0.14);
+            border-color: rgba(200, 255, 0, 0.35);
+        }
+
+        .platforms a svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .platforms a.download {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #e8e8e8;
+        }
+
+        .platforms a.download:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Lyrics */
+        .lyrics-toggle {
+            display: block;
+            width: calc(100% - 56px);
+            margin: 12px 28px 28px;
+            padding: 10px;
+            background: rgba(200, 255, 0, 0.06);
+            border: 1px solid rgba(200, 255, 0, 0.15);
+            border-radius: 8px;
+            color: #c8ff00;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .lyrics-toggle:hover {
+            background: rgba(200, 255, 0, 0.12);
+        }
+
+        .lyrics {
+            display: none;
+            padding: 20px 28px 28px;
+            white-space: pre-line;
+            color: #b8c8d8;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            border-top: 1px solid rgba(200, 255, 0, 0.07);
+            margin-top: 16px;
+        }
+
+        .lyrics.open {
+            display: block;
+        }
+
+        /* SEO text */
+        .seo-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        .seo-section h2 {
+            font-size: 1.3rem;
+            color: #c8ff00;
+            margin-bottom: 14px;
+        }
+
+        .seo-section p {
+            color: #7a90a4;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #3a5060;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(200, 255, 0, 0.05);
+        }
+
+        @media (max-width: 520px) {
+            .song-header { flex-direction: column; align-items: center; text-align: center; }
+            .song-cover { width: 160px; height: 160px; }
+        }
+    </style>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        "name": "Песни про теннис",
+        "byArtist": {
+            "@type": "MusicGroup",
+            "name": "Tennis Girl"
+        },
+        "genre": "Pop",
+        "inLanguage": "ru",
+        "track": [
+            {
+                "@type": "MusicRecording",
+                "name": "Девчонка у сетки",
+                "byArtist": { "@type": "MusicGroup", "name": "Tennis Girl" },
+                "inLanguage": "ru"
+            },
+            {
+                "@type": "MusicRecording",
+                "name": "Микст — это любовь",
+                "byArtist": { "@type": "MusicGroup", "name": "Tennis Girl" },
+                "inLanguage": "ru"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <header class="hero">
+        <p class="artist">TENNIS GIRL</p>
+        <h1>Песни про теннис</h1>
+        <p class="subtitle">Музыка на русском языке о большом теннисе</p>
+    </header>
+
+    <main class="songs">
+
+        <!-- Song 1 -->
+        <article class="song" id="devchonka">
+            <div class="song-header">
+                <img class="song-cover" src="song/image/devchonka.jpg" alt="Девчонка у сетки - Tennis Girl - песня про теннис" width="180" height="180" loading="lazy">
+                <div class="song-info">
+                    <h2>Девчонка у сетки</h2>
+                    <p class="artist-name">Tennis Girl</p>
+                    <p>Дерзкая песня о миксте в большом теннисе. Девчонка у сетки&nbsp;&mdash; мишень или равный соперник? Драма, адреналин и удары по&nbsp;корту&nbsp;&mdash; настоящий теннисный боевик в&nbsp;музыке.</p>
+                </div>
+            </div>
+            <div class="audio-wrap">
+                <audio controls preload="metadata">
+                    <source src="song/audio/Девчонка у сетки.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+            </div>
+            <div class="platforms">
+                <a href="https://music.yandex.ru/album/40873559" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.5 14.5h-2V9.72L8.5 11V9l5-2.5v10z"/></svg>
+                    Яндекс Музыка
+                </a>
+                <a href="https://music.vk.com/link/GDfpX" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.38 7.41L14 14.77l-2-3.54-2.6 3.54H7.62l3.73-4.86L9.7 7.23h1.82l1.48 2.7 2-2.7h1.78l-3.03 3.92 3.23 4.35h-1.82l-1.56-2.62z"/></svg>
+                    VK Музыка
+                </a>
+                <a href="https://vk.ru/music/album/-2000857584_26857584" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.08 13.34c-.46.45-1.37.03-1.88-.32-.7-.48-1.27-1.1-1.77-1.76-.16-.21-.32-.44-.55-.57-.4-.23-.7.05-.85.43-.2.48-.23 1-.38 1.5-.22.7-.68.87-1.4.8-1.54-.14-2.85-.7-3.98-1.63-1.02-.84-1.8-1.87-2.48-2.98-.66-1.08-1.22-2.22-1.63-3.03-.17-.34-.02-.53.33-.53h1.4c.25 0 .42.12.53.36.44 1.02.98 1.98 1.63 2.87.16.22.33.44.57.57.27.14.42.02.52-.24.14-.37.2-.77.23-1.16.04-.6.05-1.2-.05-1.8-.06-.4-.33-.66-.72-.73-.2-.04-.17-.12-.07-.2.17-.14.36-.23.7-.23h1.77c.28.06.34.18.38.46l.01 1.97c0 .22.1.42.27.44.14.02.28-.1.4-.22.56-.6 1-1.3 1.36-2.04.16-.32.3-.65.42-.98.1-.24.24-.36.5-.36h1.53c.46 0 .56.16.46.55-.2.76-.66 1.4-1.08 2.05-.46.7-.96 1.38-1.36 2.13-.14.24-.12.4.1.6.5.46.96.96 1.34 1.52.22.32.42.66.54 1.04.14.46-.04.7-.5.7z"/></svg>
+                    ВКонтакте
+                </a>
+                <a href="https://zvuk.com/release/49144899" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 16V8l8 4-8 4z"/></svg>
+                    Звук
+                </a>
+                <a href="https://music.mts.ru/album/40873559" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 16V8l8 4-8 4z"/></svg>
+                    KION
+                </a>
+                <a href="https://music.wink.ru/release/49144899" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 16V8l8 4-8 4z"/></svg>
+                    Wink
+                </a>
+                <a class="download" href="song/audio/Девчонка у сетки.mp3" download="Девчонка у сетки - Tennis Girl.mp3">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Скачать MP3
+                </a>
+            </div>
+            <button class="lyrics-toggle" onclick="toggleLyrics(this)" aria-expanded="false">Показать текст песни</button>
+            <div class="lyrics">Tennis Girl — «Девчонка у сетки»
+
+Тишина перед подачей и сердца стук.
+Какой ты, парень, из «этих» или друг?
+Короткий мяч... Сейчас узнаю! Вот чёрт, летит.
+Едва закрывшись ракеткой, я не сдержала крик.
+
+Обиды нет, мне жаль тебя.
+Ты посмотри, кого с собою привела.
+Глаза его горят и зубы сжаты.
+И приближается твой час расплаты.
+
+Девчонка у сетки — мишень или для красоты?
+Какой же выбор сегодня сделал ты?
+Я равная по силе? А может быть, слабей?
+Я выдержу удар твой или всё-таки не бей?
+
+Защитник мой идёт в атаку, он страшно зол.
+Вот мяч летит — на смэш он подошел.
+Звериный рык, прыжок, удар!!!
+И у кого-то в мягких тканях разгорается пожар...
+
+Два хищника на поле. Бой стал другим.
+Адреналин нахлынул всем четверым.
+Удар за ударом по телу и в корт.
+И другом сегодня никто не уйдет.
+
+Девчонка у сетки — мишень или для красоты?
+Какой же выбор сегодня сделал ты?
+Я равная по силе? А может быть, слабей?
+Я выдержу удар твой или всё-таки не бей?
+Или всё-таки не бей?
+Или всё-таки не бей...</div>
+        </article>
+
+        <!-- Song 2 -->
+        <article class="song" id="mixt">
+            <div class="song-header">
+                <img class="song-cover" src="song/image/mixt.jpg" alt="Микст это любовь - Tennis Girl - песня про микст в теннисе" width="180" height="180" loading="lazy">
+                <div class="song-info">
+                    <h2>Микст &mdash; это любовь</h2>
+                    <p class="artist-name">Tennis Girl</p>
+                    <p>Ироничная и&nbsp;тёплая песня про микст в&nbsp;большом теннисе. Ссоры, смэши в&nbsp;забор, примирения и&nbsp;снова на&nbsp;корт&nbsp;&mdash; если вы играли микст, вы&nbsp;всё это знаете.</p>
+                </div>
+            </div>
+            <div class="audio-wrap">
+                <audio controls preload="metadata">
+                    <source src="song/audio/Микст - это любовь.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+            </div>
+            <div class="platforms">
+                <a href="https://music.yandex.ru/album/40718987" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.5 14.5h-2V9.72L8.5 11V9l5-2.5v10z"/></svg>
+                    Яндекс Музыка
+                </a>
+                <a href="https://music.vk.com/link/fEb0x" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.38 7.41L14 14.77l-2-3.54-2.6 3.54H7.62l3.73-4.86L9.7 7.23h1.82l1.48 2.7 2-2.7h1.78l-3.03 3.92 3.23 4.35h-1.82l-1.56-2.62z"/></svg>
+                    VK Музыка
+                </a>
+                <a href="https://vk.ru/music/album/-2000764362_26764362" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.08 13.34c-.46.45-1.37.03-1.88-.32-.7-.48-1.27-1.1-1.77-1.76-.16-.21-.32-.44-.55-.57-.4-.23-.7.05-.85.43-.2.48-.23 1-.38 1.5-.22.7-.68.87-1.4.8-1.54-.14-2.85-.7-3.98-1.63-1.02-.84-1.8-1.87-2.48-2.98-.66-1.08-1.22-2.22-1.63-3.03-.17-.34-.02-.53.33-.53h1.4c.25 0 .42.12.53.36.44 1.02.98 1.98 1.63 2.87.16.22.33.44.57.57.27.14.42.02.52-.24.14-.37.2-.77.23-1.16.04-.6.05-1.2-.05-1.8-.06-.4-.33-.66-.72-.73-.2-.04-.17-.12-.07-.2.17-.14.36-.23.7-.23h1.77c.28.06.34.18.38.46l.01 1.97c0 .22.1.42.27.44.14.02.28-.1.4-.22.56-.6 1-1.3 1.36-2.04.16-.32.3-.65.42-.98.1-.24.24-.36.5-.36h1.53c.46 0 .56.16.46.55-.2.76-.66 1.4-1.08 2.05-.46.7-.96 1.38-1.36 2.13-.14.24-.12.4.1.6.5.46.96.96 1.34 1.52.22.32.42.66.54 1.04.14.46-.04.7-.5.7z"/></svg>
+                    ВКонтакте
+                </a>
+                <a href="https://music.mts.ru/album/40718987" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 16V8l8 4-8 4z"/></svg>
+                    KION
+                </a>
+                <a class="download" href="song/audio/Микст - это любовь.mp3" download="Микст - это любовь - Tennis Girl.mp3">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Скачать MP3
+                </a>
+            </div>
+            <button class="lyrics-toggle" onclick="toggleLyrics(this)" aria-expanded="false">Показать текст песни</button>
+            <div class="lyrics">Tennis Girl — «Микст — это любовь»
+
+Прекрасный выходной, микстёры на арене.
+Я королева тенниса! В субботу, в воскресенье.
+Со мной партнёр — подача мощь, удары — словно пули!
+Мы вместе в бой идём, ракетками взмахнули!
+
+Вот первый гейм. Я собрана. Глаза сверкают!
+Дышать, подход, удар... О, боже, я попала в аут.
+Ты объясняешь мне, как я должна принять. Куда вести ракетку.
+Но что такое, твой приём вдруг в сетку?
+
+Микст — это брак, без штампа и колец.
+Где виновата я — в пятнадцати из десяти чудес.
+Мой милый тренер, критик и герой.
+Ты позовёшь меня — и снова я с тобой.
+Микст — это стресс. Характер и любовь!
+И каждый раз он будоражит кровь...
+
+Рычишь мне: «Соберись! Ну сколько можно, нет?»
+Да, дорогой, я собралась. И у меня иммунитет!
+Вот новый розыгрыш и мяч твой на ракетке.
+Но смеш в забор. А виновата я — не так стою у сетки!
+
+Дышу, терплю и заклинаю: последний раз с тобой играю…
+И обязательно всё-всё тебе скажу!
+Вот новый мяч, решимости полна... И точно в угол! Да! Забила!
+Красотка! Лучшая! — Кричишь. Я улыбаюсь — всё тебе простила!
+
+Микст — это брак, без штампа и колец.
+Где виновата я — в пятнадцати из десяти чудес.
+Мой милый тренер, критик и герой.
+Ты позовёшь меня — и снова я с тобой.
+Микст — это стресс. Характер и любовь!
+И каждый раз он будоражит кровь...</div>
+        </article>
+
+    </main>
+
+    <section class="seo-section">
+        <h2>Песни про большой теннис на русском языке</h2>
+        <p>Tennis Girl&nbsp;&mdash; музыкальный проект, целиком посвящённый песням про теннис. Две композиции&nbsp;&mdash; «Девчонка у&nbsp;сетки» и&nbsp;«Микст&nbsp;&mdash; это любовь»&nbsp;&mdash; рассказывают о&nbsp;настоящих эмоциях, которые знакомы каждому, кто выходил на&nbsp;корт: азарт розыгрыша, напряжение микста, радость удачного удара и&nbsp;неизбежные споры с&nbsp;партнёром.</p>
+        <p>Если вы искали песню про теннис, песню про большой теннис или музыку о&nbsp;теннисе на&nbsp;русском языке&nbsp;&mdash; вы нашли то, что нужно. Слушайте, делитесь с&nbsp;друзьями по&nbsp;корту и&nbsp;включайте по&nbsp;дороге на&nbsp;тренировку.</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Tennis Girl. Песни про теннис.
+    </footer>
+
+    <script>
+        function toggleLyrics(btn) {
+            const lyrics = btn.nextElementSibling;
+            const isOpen = lyrics.classList.toggle('open');
+            btn.textContent = isOpen ? 'Скрыть текст песни' : 'Показать текст песни';
+            btn.setAttribute('aria-expanded', isOpen);
+        }
+    </script>
+
+</body>
+</html>
